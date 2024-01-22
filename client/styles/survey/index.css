@@ -1,0 +1,97 @@
+.Main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Header {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  /*background-color: black;*/
+  border-bottom: 1px solid black;
+}
+
+.SmallRectangle {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(236, 0, 140);
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+
+.BigRectangle {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: rgb(236, 0, 140);
+  transform: rotate(45deg);
+}
+
+.LogoTitle {
+  color: rgb(53, 27, 111);
+  font-weight: bold;
+  margin: 0 0 0 10px;
+  font-size: large;
+}
+
+.LogoDescription {
+  color: rgb(53, 27, 111);
+  font-size: x-small;
+  margin-left: 10px;
+  margin: 0 0 0 11px;
+  font-weight: bold;
+}
+
+/* ================================================== */
+
+.Title {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-top: 10%;
+}
+
+.Body {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgb(0, 135, 212);
+  border-radius: 30px;
+  max-width: 800px;
+}
+
+.introduce {
+  color: rgb(0, 135, 212);
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 5px 0px 5px;
+}
+
+@media only screen and (max-width: 480px) {
+  .introduce {
+    font-size: 10px;
+    margin-top: 30px;
+  }
+}
+
+.start {
+  display: flex;
+  width: 100px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(53, 27, 111);
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.start:hover {
+  background-color: gray;
+}
