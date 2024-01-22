@@ -18,6 +18,8 @@ bin/
 !**/src/test/**/bin/
 
 ### IntelliJ IDEA ###
+application-DB.yml
+
 .idea
 *.iws
 *.iml
@@ -35,3 +37,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+../개발 일지.md
+
+.
