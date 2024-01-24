@@ -39,5 +39,4 @@ out/
 .vscode/
 
 ../개발 일지.md
-
-.
+/Dockerfile

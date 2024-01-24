@@ -1,9 +1,12 @@
 // pages/index.js
+import React from 'react';
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <div>
-      <h1>Hello, Next.js!</h1>
+      <h1>Welcome to my Next.js app!</h1>
     </div>
   );
 };
+
+export default HomePage
