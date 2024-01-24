@@ -19,10 +19,9 @@ const SurveyPage = () => {
   const [responseData, setResponseData] = useState([organization]);
 
   const { postdata, posterrer, postloaded, PostAxios } = usePostAxios();
+  console.log(data)
+  const QnA = data && data.questions && id <= 11 ? data.questions.find((question) => question.num === parseInt(id, 10)) : { num : 0, question : "null" , answer : ["null"] };
 
-  const QnA = data.questions.find(
-    (question) => question.num === parseInt(id, 10)
-  );
 
   useEffect(() => {
     setCheckNum("");
@@ -68,8 +67,9 @@ const SurveyPage = () => {
             justifyContent: "center",
           }}
         >
-          {QnA.answer.map((ans, index) => (
+          {QnA.answer.map((ans, index, key) => (
             <div
+              key={key}
               style={{
                 display: "flex",
                 width: "30%",
