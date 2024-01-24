@@ -50,9 +50,9 @@ out/
 
 
 # ======== env ======
-/API-Server/Dockerfile
+/server/Dockerfile
 
 /client/Dockerfile
 
-/docker-compose.yml
+/server/docker-compose.yml
 
