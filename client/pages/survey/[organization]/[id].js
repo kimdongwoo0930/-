@@ -8,24 +8,26 @@ import Link from "next/link";
 import data from "../../../public/survey/data.js";
 import { useEffect, useState } from "react";
 
+import usePostAxios from "../../../Hooks/AxiosApi.js";
+
 const SurveyPage = () => {
   const router = useRouter();
   const { organization, id } = router.query;
 
   const [checkNum, setCheckNum] = useState();
   const [opinion, setOpinion] = useState();
+  const [responseData, setResponseData] = useState([organization]);
 
-  console.log(id);
-  console.log(checkNum);
-
-  useEffect(() => {
-    setCheckNum("");
-  }, []);
+  const { postdata, posterrer, postloaded, PostAxios } = usePostAxios();
 
   const QnA = data.questions.find(
     (question) => question.num === parseInt(id, 10)
   );
-  console.log(QnA);
+
+  useEffect(() => {
+    setCheckNum("");
+    setOpinion("");
+  }, []);
 
   return (
     <div className="Main">
@@ -117,6 +119,27 @@ const SurveyPage = () => {
               placeholder={"자유롭게 작성해주세요."}
             />
           </div>
+        ) : id >= 5 && id < 11 ? (
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <input
+              style={{
+                width: "70%",
+                height: 40,
+                borderTop: 0,
+                borderLeft: 0,
+                borderRight: 0,
+              }}
+              onChange={(e) => setOpinion(e.target.value)}
+              value={opinion}
+              placeholder={" * 불만족 내용은 무엇입니까? "}
+            />
+          </div>
         ) : (
           <></>
         )}
@@ -133,7 +156,34 @@ const SurveyPage = () => {
                 fontWeight: "bold",
                 textDecoration: "none",
               }}
-              onClick={() => setCheckNum("")}
+              onClick={() => {
+                setCheckNum("");
+                setOpinion("");
+                const Data = [...responseData];
+                Data[id] =
+                  id !== "11"
+                    ? `${QnA.answer[checkNum]}/${opinion}`
+                    : `${opinion}`;
+                setResponseData(Data);
+                if (id === "11") {
+                  const url = process.env.NEXT_PUBLIC_SURVEY_API_URL;
+                  const payload = {
+                    organization: responseData[0],
+                    answer_1: responseData[1],
+                    answer_2: responseData[2],
+                    answer_3: responseData[3],
+                    answer_4: responseData[4],
+                    answer_5: responseData[5],
+                    answer_6: responseData[6],
+                    answer_7: responseData[7],
+                    answer_8: responseData[8],
+                    answer_9: responseData[9],
+                    answer_10: responseData[10],
+                    answer_11: opinion,
+                  };
+                  PostAxios(url, payload);
+                }
+              }}
             >
               {id !== "11" ? "다음" : "끝내기"}
             </Link>

@@ -8,6 +8,8 @@ import lombok.*;
 @Table(name = "survey")
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Survey extends BaseTimeEntity {
 
     @Id
@@ -54,30 +56,23 @@ public class Survey extends BaseTimeEntity {
 
 
 
-    @Builder
-    public Survey(String organization,
-                  String answer_1,
-                  String answer_2,
-                  String answer_3,
-                  String answer_4,
-                  String answer_5,
-                  String answer_6,
-                  String answer_7,
-                  String answer_8,
-                  String answer_9,
-                  String answer_10,
-                  String answer_11) {
-        this.organization = organization;
-        this.answer_1 = answer_1;
-        this.answer_2 = answer_2;
-        this.answer_3 = answer_3;
-        this.answer_4 = answer_4;
-        this.answer_5 = answer_5;
-        this.answer_6 = answer_6;
-        this.answer_7 = answer_7;
-        this.answer_8 = answer_8;
-        this.answer_9 = answer_9;
-        this.answer_10 = answer_10;
-        this.answer_11 = answer_11;
+    public static Survey toEntity(SurveyDto dto){
+        return Survey.builder()
+                .organization(dto.getOrganization())
+                .answer_1(dto.getAnswer_1())
+                .answer_2(dto.getAnswer_2())
+                .answer_3(dto.getAnswer_3())
+                .answer_4(dto.getAnswer_4())
+                .answer_5(dto.getAnswer_5())
+                .answer_6(dto.getAnswer_6())
+                .answer_7(dto.getAnswer_7())
+                .answer_8(dto.getAnswer_8())
+                .answer_9(dto.getAnswer_9())
+                .answer_10(dto.getAnswer_10())
+                .answer_11(dto.getAnswer_11())
+                .build();
+
     }
+
+
 }

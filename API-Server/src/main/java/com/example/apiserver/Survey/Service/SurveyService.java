@@ -1,6 +1,7 @@
 package com.example.apiserver.Survey.Service;
 
 import com.example.apiserver.Survey.Entity.Survey;
+import com.example.apiserver.Survey.Entity.SurveyDto;
 import com.example.apiserver.Survey.Repository.SurveyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -9,10 +10,17 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class SurveyService {
 
-    private final SurveyRepository repository;
+    private final SurveyRepository surveyrepository;
 
-    public Survey save(Survey survey){
-        repository.save(survey);
-        return survey;
+    public SurveyDto save(SurveyDto data){
+        // Dto -> Entity
+        Survey Entity = Survey.toEntity(data);
+
+        // Save Entity
+        Survey response = surveyrepository.save(Entity);
+
+        // Entity to Dto
+        SurveyDto Dto = SurveyDto.toDto(response);
+        return Dto;
     }
 }

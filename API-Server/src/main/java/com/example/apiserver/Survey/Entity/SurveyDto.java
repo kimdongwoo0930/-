@@ -32,6 +32,24 @@ public class SurveyDto {
 
     private String answer_11;
 
+
+    public static SurveyDto toDto(Survey entity){
+        return SurveyDto.builder()
+                .organization(entity.getOrganization())
+                .answer_1(entity.getAnswer_1())
+                .answer_2(entity.getAnswer_2())
+                .answer_3(entity.getAnswer_3())
+                .answer_4(entity.getAnswer_4())
+                .answer_5(entity.getAnswer_5())
+                .answer_6(entity.getAnswer_6())
+                .answer_7(entity.getAnswer_7())
+                .answer_8(entity.getAnswer_8())
+                .answer_9(entity.getAnswer_9())
+                .answer_10(entity.getAnswer_10())
+                .answer_11(entity.getAnswer_11())
+                .build();
+
+    }
 }
 
 
