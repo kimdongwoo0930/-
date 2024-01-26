@@ -9,19 +9,20 @@ import data from "../../../public/survey/data.js";
 import { useEffect, useState } from "react";
 
 import usePostAxios from "../../../Hooks/AxiosApi.js";
-
 const SurveyPage = () => {
   const router = useRouter();
   const { organization, id } = router.query;
 
   const [checkNum, setCheckNum] = useState();
   const [opinion, setOpinion] = useState();
-  const [responseData, setResponseData] = useState([organization]);
 
   const { postdata, posterrer, postloaded, PostAxios } = usePostAxios();
-  console.log(data)
-  const QnA = data && data.questions && id <= 11 ? data.questions.find((question) => question.num === parseInt(id, 10)) : { num : 0, question : "null" , answer : ["null"] };
+  const [responseData, setResponseData] = useState([organization]);
 
+
+  const QnA = data?.questions.find(
+    (question) => question.num === parseInt(id, 10)
+  );
 
   useEffect(() => {
     setCheckNum("");
@@ -58,7 +59,7 @@ const SurveyPage = () => {
             marginRight: 5,
           }}
         >
-          {QnA.question}
+          {QnA?.question}
         </p>
         <div
           style={{
@@ -67,9 +68,9 @@ const SurveyPage = () => {
             justifyContent: "center",
           }}
         >
-          {QnA.answer.map((ans, index, key) => (
+          {QnA?.answer.map((ans, index) => (
             <div
-              key={key}
+              key={index}
               style={{
                 display: "flex",
                 width: "30%",
@@ -91,7 +92,7 @@ const SurveyPage = () => {
         </div>
         {/* 이부분은 1 ~ 4번 까지의 질문에는 기타가 있기때문에 존재하는 칸입니다.  */}
         {/* 11번 입력칸 부분 */}
-        {checkNum === QnA.answer.length - 1 && id <= 4 ? (
+        {checkNum === QnA?.answer.length - 1 && id <= 4 ? (
           <input
             className="opinion"
             onChange={(e) => setOpinion(e.target.value)}
@@ -147,6 +148,8 @@ const SurveyPage = () => {
           <div className="next">
             <Link
               href={
+                responseData[0] === "" ?
+                "/survey/error" : 
                 id === "11"
                   ? "/survey/end"
                   : `/survey/${organization}/${parseInt(id, 10) + 1}`

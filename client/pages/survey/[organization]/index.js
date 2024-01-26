@@ -9,7 +9,9 @@ import Link from "next/link";
 const SurveyMainPage = () => {
   const router = useRouter();
   const { organization } = router.query;
-  const address = "./" + organization + "/1";
+
+  const address = `/survey/${organization}/1`;
+
 
   return (
     <div className="Main">
