@@ -9,6 +9,7 @@ import data from "../../../public/survey/data.js";
 import { useEffect, useState } from "react";
 
 import usePostAxios from "../../../Hooks/AxiosApi.js";
+import useChangeUrl from "@/Hooks/ChangeUrl";
 
 const SurveyPage = () => {
   const router = useRouter();
@@ -16,11 +17,17 @@ const SurveyPage = () => {
 
   const [checkNum, setCheckNum] = useState();
   const [opinion, setOpinion] = useState();
-  const [responseData, setResponseData] = useState([organization]);
 
   const { postdata, posterrer, postloaded, PostAxios } = usePostAxios();
+  const { Encoding, Decoding } = useChangeUrl();
+  const organizations = Decoding(organization)
 
-  const QnA = data?.questions?.find(
+  const [responseData, setResponseData] = useState([organizations]);
+
+  console.log(responseData)
+
+
+  const QnA = data?.questions.find(
     (question) => question.num === parseInt(id, 10)
   );
 
@@ -68,9 +75,9 @@ const SurveyPage = () => {
             justifyContent: "center",
           }}
         >
-          {QnA?.answer.map((ans, index, key) => (
+          {QnA?.answer.map((ans, index) => (
             <div
-              key={key}
+              key={index}
               style={{
                 display: "flex",
                 width: "30%",
@@ -148,6 +155,8 @@ const SurveyPage = () => {
           <div className="next">
             <Link
               href={
+                responseData[0] === "" ?
+                "/survey/error" : 
                 id === "11"
                   ? "/survey/end"
                   : `/survey/${organization}/${parseInt(id, 10) + 1}`
@@ -163,7 +172,7 @@ const SurveyPage = () => {
                 const Data = [...responseData];
                 Data[id] =
                   id !== "11"
-                    ? `${QnA?.answer[checkNum]}/${opinion}`
+                    ? `${QnA.answer[checkNum]}/${opinion}`
                     : `${opinion}`;
                 setResponseData(Data);
                 if (id === "11") {
