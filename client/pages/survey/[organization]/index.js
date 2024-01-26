@@ -5,15 +5,13 @@
 import { useRouter } from "next/router";
 import "../../../styles/survey/index.css";
 import Link from "next/link";
-import useChangeUrl from "@/Hooks/ChangeUrl";
 
 const SurveyMainPage = () => {
   const router = useRouter();
   const { organization } = router.query;
-  const address = "./" + organization + "/1";
 
-  const { Encoding, Decoding } = useChangeUrl();
-  const decodeUrl = Decoding(organization)
+  const address = `/survey/${organization}/1`;
+
 
   return (
     <div className="Main">
@@ -37,7 +35,7 @@ const SurveyMainPage = () => {
       </div>
       <div className="Body">
         <p className="introduce">
-          저희 흥국생명연수원을 찾아주신 {decodeUrl} 고객님께 감사드립니다.{" "}
+          저희 흥국생명연수원을 찾아주신 {organization} 고객님께 감사드립니다.{" "}
           <br />
           <br />
           고객님께 보다 나은 서비스를 제공해드리기 위해 이용 만족도 조사를

@@ -58,3 +58,5 @@ docker-compose.yml
 
 conf/nginx.conf
 
+/client/.env
+
