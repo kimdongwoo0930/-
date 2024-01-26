@@ -9,8 +9,6 @@ import data from "../../../public/survey/data.js";
 import { useEffect, useState } from "react";
 
 import usePostAxios from "../../../Hooks/AxiosApi.js";
-import useChangeUrl from "@/Hooks/ChangeUrl";
-
 const SurveyPage = () => {
   const router = useRouter();
   const { organization, id } = router.query;
@@ -19,12 +17,7 @@ const SurveyPage = () => {
   const [opinion, setOpinion] = useState();
 
   const { postdata, posterrer, postloaded, PostAxios } = usePostAxios();
-  const { Encoding, Decoding } = useChangeUrl();
-  const organizations = Decoding(organization)
-
-  const [responseData, setResponseData] = useState([organizations]);
-
-  console.log(responseData)
+  const [responseData, setResponseData] = useState([organization]);
 
 
   const QnA = data?.questions.find(

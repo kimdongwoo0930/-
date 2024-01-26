@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
 import "../../styles/survey/end.css";
 
-import useChangeUrl from "@/Hooks/ChangeUrl";
 
 const MakeUrlpage = () => {
     const [name,setName] = useState("");
     const [url,setUrl] = useState("")
 
-    const { Encoding, Decoding } = useChangeUrl();
 
 
     useEffect(() => {
-        const after = Encoding(name)
-        const Url = `http://hka.kr/survey/${after}`
+        const Url = `http://www.hka.kr/survey/${encodeURIComponent(name.split(' ').join(''))}`
         setUrl(Url);
     },[name])
   return (
