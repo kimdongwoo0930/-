@@ -19,9 +19,10 @@ const SurveyPage = () => {
   const [responseData, setResponseData] = useState([organization]);
 
   const { postdata, posterrer, postloaded, PostAxios } = usePostAxios();
-  console.log(data)
-  const QnA = data && data.questions && id <= 11 ? data.questions.find((question) => question.num === parseInt(id, 10)) : { num : 0, question : "null" , answer : ["null"] };
 
+  const QnA = data?.questions?.find(
+    (question) => question.num === parseInt(id, 10)
+  );
 
   useEffect(() => {
     setCheckNum("");
@@ -58,7 +59,7 @@ const SurveyPage = () => {
             marginRight: 5,
           }}
         >
-          {QnA.question}
+          {QnA?.question}
         </p>
         <div
           style={{
@@ -67,7 +68,7 @@ const SurveyPage = () => {
             justifyContent: "center",
           }}
         >
-          {QnA.answer.map((ans, index, key) => (
+          {QnA?.answer.map((ans, index, key) => (
             <div
               key={key}
               style={{
@@ -91,7 +92,7 @@ const SurveyPage = () => {
         </div>
         {/* 이부분은 1 ~ 4번 까지의 질문에는 기타가 있기때문에 존재하는 칸입니다.  */}
         {/* 11번 입력칸 부분 */}
-        {checkNum === QnA.answer.length - 1 && id <= 4 ? (
+        {checkNum === QnA?.answer.length - 1 && id <= 4 ? (
           <input
             className="opinion"
             onChange={(e) => setOpinion(e.target.value)}
@@ -162,7 +163,7 @@ const SurveyPage = () => {
                 const Data = [...responseData];
                 Data[id] =
                   id !== "11"
-                    ? `${QnA.answer[checkNum]}/${opinion}`
+                    ? `${QnA?.answer[checkNum]}/${opinion}`
                     : `${opinion}`;
                 setResponseData(Data);
                 if (id === "11") {
