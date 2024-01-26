@@ -54,5 +54,7 @@ out/
 
 /client/Dockerfile
 
-/server/docker-compose.yml
+docker-compose.yml
+
+conf/nginx.conf
 
