@@ -1,5 +1,6 @@
 package com.example.server.Survey.Entity;
 
+import com.example.server.Survey.Entity.Dto.SurveyDto;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,6 +20,9 @@ public class Survey extends BaseTimeEntity {
 
     @Column(name = "organization")
     private String organization;
+
+    @Column(name = "token")
+    private String token;
 
     @Column(name = "answer_1")
     private String answer_1;
@@ -56,9 +60,10 @@ public class Survey extends BaseTimeEntity {
 
 
 
-    public static Survey toEntity(SurveyDto dto){
+    public static Survey toEntity(SurveyDto dto, String organization){
         return Survey.builder()
-                .organization(dto.getOrganization())
+                .organization(organization)
+                .token(dto.getToken())
                 .answer_1(dto.getAnswer_1())
                 .answer_2(dto.getAnswer_2())
                 .answer_3(dto.getAnswer_3())

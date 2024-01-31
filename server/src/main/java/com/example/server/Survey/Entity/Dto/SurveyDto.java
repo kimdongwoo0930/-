@@ -1,5 +1,6 @@
-package com.example.server.Survey.Entity;
+package com.example.server.Survey.Entity.Dto;
 
+import com.example.server.Survey.Entity.Survey;
 import lombok.*;
 
 @Data
@@ -7,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SurveyDto {
-    private String organization;
+    private String token;
 
     private String answer_1;
 
@@ -34,7 +35,7 @@ public class SurveyDto {
 
     public static SurveyDto toDto(Survey entity){
         return SurveyDto.builder()
-                .organization(entity.getOrganization())
+                .token(entity.getToken())
                 .answer_1(entity.getAnswer_1())
                 .answer_2(entity.getAnswer_2())
                 .answer_3(entity.getAnswer_3())

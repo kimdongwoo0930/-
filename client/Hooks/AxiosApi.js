@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-const usePostAxios = () => {
+const useAxiosApi = () => {
   const [error, setError] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [data, setData] = useState();
@@ -21,7 +21,22 @@ const usePostAxios = () => {
     }
   };
 
-  return { data, error, loaded, PostAxios };
+  const GetAxios = async (url) => {
+    try{
+      const response = await axios.get(url, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      setData(response.data);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoaded(true);
+    }
+  }
+
+  return { data, error, loaded, PostAxios, GetAxios };
 };
 
-export default usePostAxios;
+export default useAxiosApi;

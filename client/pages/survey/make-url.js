@@ -1,29 +1,38 @@
 import { useEffect, useState } from "react";
-import "../../styles/survey/end.css";
+import "../../styles/survey/make-url.css";
+
+import useAxiosApi from "@/Hooks/AxiosApi";
 
 
 const MakeUrlpage = () => {
     const [name,setName] = useState("");
     const [url,setUrl] = useState("")
+    const { data, errer, loaded, GetAxios } = useAxiosApi();
 
-
+    const handleGenerate = async() => {
+      if( name.trim() === "" ) { setUrl("업체명을 입력해주세요.") }
+      else{ await GetAxios(`http://localhost:8001/api/v1/generate-token/${name}`) } 
+    }
 
     useEffect(() => {
-        const Url = `http://www.hka.kr/survey/${encodeURIComponent(name.split(' ').join(''))}`
-        setUrl(Url);
-    },[name])
+      if(loaded){
+        setUrl(`http://www.hka.kr/survey/${data.token}`)
+      }
+    },[loaded])
+
+
   return (
     <>
       <div className="Main">
         <div className="Header">
-          <div style={{}}>
+          <div>
             <div className="SmallRectangle"></div>
             <div className="SmallRectangle"></div>
           </div>
-          <div style={{}}>
+          <div>
             <div className="BigRectangle"></div>
           </div>
-          <div style={{}}>
+          <div>
             <p className="LogoTitle">Heungkuk</p>
             <p className="LogoDescription">Life Insurance</p>
           </div>
@@ -34,7 +43,7 @@ const MakeUrlpage = () => {
           <p>흥국생명연수원 이용 만족도 조사</p>
         </div>
         <div className="Body">
-          <p className="introduce">Url 제작화면</p>
+          <p className="introduce">설문조사 토큰을 생성합니다.</p>
           <div
             style={{
               width: "100%",
@@ -56,6 +65,7 @@ const MakeUrlpage = () => {
           placeholder={"업체명을 입력해주세요."}
         />
         </div>
+        <button className="submit-button" onClick={handleGenerate}>생성</button>
         <p>{url}</p>
         </div>
       </div>
