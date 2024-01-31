@@ -1,0 +1,120 @@
+.Main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+.Header {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    /*background-color: black;*/
+}
+
+.SmallRectangle {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(236, 0, 140);
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+.BigRectangle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(236, 0, 140);
+    transform: rotate(45deg);
+}
+
+.LogoTitle {
+    color: rgb(53, 27, 111);
+    font-weight: bold;
+    margin: 0 0 0 10px;
+    font-size: x-large;
+}
+
+.LogoDescription {
+    color: rgb(53, 27, 111);
+    font-size: small;
+    margin-left: 10px;
+    margin: 0 0 0 11px;
+    font-weight: bold;
+}
+/* ================================== */
+
+.Body {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.question-box {
+    width: 90%;
+    height: 600px;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #51a6ff;
+    border-radius: 20px;
+    background-color: white;
+    box-sizing: border-box;
+    flex-direction: column;
+    margin-top: 20%;
+    margin-bottom: 10%;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.input-container input {
+    padding: 8px;
+    border: 1px solid red;
+    border-radius: 4px;
+}
+
+.input-wrapper {
+    flex: 0 0 calc(33% - 10px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-wrapper input[type='checkbox'] {
+    /* 체크박스에 필요한 스타일링을 추가하세요 */
+    border: 2px solid #51a6ff;
+}
+
+.box-button {
+    width: 70px;
+    height: 30px;
+    background-color: #51a6ff;
+    border: 1px solid #51a6ff;
+    border-radius: 20px;
+    margin: 30px 10%;
+    cursor: pointer;
+    color: white;
+}
+
+.question-title {
+    margin: 50px 10px;
+    font-weight: bold;
+}
+
+.answer-input {
+    width: 80%;
+    height: 30px;
+    border: 0 solid;
+    border-bottom: 1px solid gray;
+}

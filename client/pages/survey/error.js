@@ -23,7 +23,7 @@ const Errorpage = () => {
           <p>흥국생명연수원 이용 만족도 조사</p>
         </div>
         <div className="Body">
-          <p className="introduce">데이터에 오류가 발생했습니다. 보내주신 주소로 재접속 부탁드립니다.</p>
+          <p className="introduce">주소가 만료되었거나 잘못되었습니다.</p>
           <div
             style={{
               width: "100%",
