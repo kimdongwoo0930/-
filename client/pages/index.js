@@ -4,7 +4,7 @@ import React from 'react';
 const HomePage = () => {
   return (
     <div>
-      <h1>Welcome to my Next.js app!</h1>
+      <h1>Test Page</h1>
     </div>
   );
 };
