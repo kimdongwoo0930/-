@@ -75,7 +75,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    width: 90%;
+    width: 80%;
     margin-bottom: 30px;
 }
 
@@ -92,7 +92,6 @@
 .input-wrapper div {
     /* 체크박스에 필요한 스타일링을 추가하세요 */
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;

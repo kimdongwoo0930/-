@@ -17,7 +17,9 @@ const QuestionBox = ({
 }) => {
     return (
         <div key={idx} className={`question-box`} ref={questionRef.current[idx]}>
-            <div className="question-title">{items.question}</div>
+            <div className="question-title">
+                {idx + 1}. {items.question}
+            </div>
             <div className="input-container">
                 {items.answer.map((item, num) => (
                     <div className="input-wrapper" key={num}>
