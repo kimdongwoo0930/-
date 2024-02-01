@@ -1,4 +1,4 @@
-debug : false
+debug: false
 
 spring:
     profiles:
@@ -9,7 +9,4 @@ spring:
             ddl-auto: update
         show-sql: true
 server:
-    port: 8001
-
-
-
+    port: 8888

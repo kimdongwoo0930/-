@@ -57,43 +57,45 @@
 
 .question-box {
     width: 90%;
-    height: 600px;
+    height: auto;
+    min-height: 600px;
+    max-height: 800px;
     max-width: 800px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid #51a6ff;
     border-radius: 20px;
-    background-color: white;
-    box-sizing: border-box;
     flex-direction: column;
     margin-top: 20%;
-    margin-bottom: 10%;
+    margin-bottom: 50%;
 }
 
 .input-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    flex-wrap: wrap;
-}
-
-.input-container input {
-    padding: 8px;
-    border: 1px solid red;
-    border-radius: 4px;
+    width: 90%;
+    margin-bottom: 30px;
 }
 
 .input-wrapper {
-    flex: 0 0 calc(33% - 10px);
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
 }
 
-.input-wrapper input[type='checkbox'] {
+.input-wrapper input {
     /* 체크박스에 필요한 스타일링을 추가하세요 */
-    border: 2px solid #51a6ff;
+    transform: scale(1.5);
+    margin-right: 20px;
+}
+
+.input-wrapper div {
+    /* 체크박스에 필요한 스타일링을 추가하세요 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .box-button {
@@ -102,19 +104,43 @@
     background-color: #51a6ff;
     border: 1px solid #51a6ff;
     border-radius: 20px;
-    margin: 30px 10%;
     cursor: pointer;
     color: white;
 }
 
 .question-title {
-    margin: 50px 10px;
     font-weight: bold;
+    font-size: large;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .answer-input {
     width: 80%;
     height: 30px;
     border: 0 solid;
-    border-bottom: 1px solid gray;
+    border-bottom: 2px solid gray;
+    border-radius: 10px;
+    padding-left: 10px;
+    box-shadow: 1px 3px 5px gray;
+}
+
+.question-box :last-child {
+    margin-bottom: 10%;
+}
+.answer-container {
+    width: 80%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.box-button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    height: 30px;
 }

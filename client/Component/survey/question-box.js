@@ -16,11 +16,7 @@ const QuestionBox = ({
     sendToServer,
 }) => {
     return (
-        <div
-            key={idx}
-            className={`question-box ${idx === currentQuestion ? 'show' : ''}`}
-            ref={questionRef.current[idx]}
-        >
+        <div key={idx} className={`question-box`} ref={questionRef.current[idx]}>
             <div className="question-title">{items.question}</div>
             <div className="input-container">
                 {items.answer.map((item, num) => (
@@ -30,25 +26,11 @@ const QuestionBox = ({
                             checked={checkNum[idx] === num}
                             onChange={() => updateCheckNum(idx, num)}
                         />
-                        <label
-                            htmlFor={`checkbox-${num}`}
-                            style={{ fontSize: 'medium' }}
-                            onClick={() => updateCheckNum(idx, num)}
-                        >
-                            {item}
-                        </label>
+                        <div onClick={() => updateCheckNum(idx, num)}>{item}</div>
                     </div>
                 ))}
             </div>
-            <div
-                style={{
-                    width: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginTop: 40,
-                }}
-            >
+            <div className="answer-container">
                 <input
                     className="answer-input"
                     type="text"
@@ -57,14 +39,7 @@ const QuestionBox = ({
                     onChange={(e) => updateWriteAnswer(idx, e.target.value)}
                 />
             </div>
-            <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    width: '100%',
-                    marginTop: 20,
-                }}
-            >
+            <div className="box-button-container">
                 {idx !== 10 ? (
                     <>
                         <button className="box-button" onClick={handlePrevQuestion}>

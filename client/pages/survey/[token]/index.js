@@ -22,7 +22,7 @@ const SurveyMainPage = () => {
     useEffect(() => {
         const getData = async () => {
             if (token) {
-                await GetAxios(`http://localhost:8001/api/v1/check-token/${token}`);
+                await GetAxios(`${process.env.NEXT_PUBLIC_SURVEY_CHECK_TOKEN_API}/${token}`);
             }
         };
         getData();
