@@ -17,7 +17,7 @@ const QuestionPage = () => {
     // 0번은 토큰 / 1 ~ 11 번까지 체크 번호에 있는거 + 기타사항
     const [checkNum, setCheckNum] = useState([]);
     const [writeAnswer, setWriteAnswer] = useState([]);
-    const { data, errer, loaded, PostAxios } = useAxiosApi();
+    const { data, error, loaded, PostAxios } = useAxiosApi();
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const questionRef = useRef(Data.map(() => createRef()));
@@ -25,7 +25,7 @@ const QuestionPage = () => {
     useEffect(() => {
         if (loaded) {
             if (data?.expiration) {
-                window.location.href = '/survey/end';
+                router.replace('/survey/end');
             }
         }
     }, [loaded]);
@@ -33,26 +33,19 @@ const QuestionPage = () => {
     useEffect(() => {
         // checkNum이 변경될 때마다 scrollIntoView 호출
         if (currentQuestion >= 0 && currentQuestion < 11) {
-            questionRef.current[currentQuestion]?.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            questionRef.current[currentQuestion]?.current.scrollIntoView({ behavior: 'auto', block: 'center' });
         }
-    }, [currentQuestion, checkNum]);
+    }, [currentQuestion]);
 
     const handleNextQuestion = () => {
-        if (currentQuestion <= 10 && checkNum[currentQuestion] + 1) {
-            setCurrentQuestion((prev) => {
-                questionRef.current[prev + 1].current.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center',
-                });
-                return prev + 1;
-            });
+        if (currentQuestion <= 10 && checkNum[currentQuestion] !== undefined) {
+            setCurrentQuestion(currentQuestion + 1);
         }
     };
 
     const handlePrevQuestion = () => {
         if (currentQuestion > 0) {
             setCurrentQuestion(currentQuestion - 1);
-            questionRef.current[currentQuestion - 1]?.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     };
 
@@ -72,7 +65,7 @@ const QuestionPage = () => {
         setWriteAnswer(List);
     };
 
-    const sendToserver = async () => {
+    const sendToserver = () => {
         const payload = {
             token: token,
             answer_1: `${Data[0].answer[checkNum[0]]}/${writeAnswer[0] || ''}`,
@@ -87,7 +80,8 @@ const QuestionPage = () => {
             answer_10: `${Data[9].answer[checkNum[9]]}/${writeAnswer[9] || ''}`,
             answer_11: `null/${writeAnswer[10] || ''}`,
         };
-        await PostAxios('http://localhost:8001/api/v1/submit-survey-response', payload);
+        const url = process.env.NEXT_PUBLIC_SURVEY_API_URL;
+        PostAxios(url, payload);
     };
 
     return (

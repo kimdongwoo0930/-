@@ -60,3 +60,5 @@ conf/nginx.conf
 
 /client/.env
 
+/client/.dockerignore
+
