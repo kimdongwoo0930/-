@@ -3,7 +3,7 @@
 */
 
 import { useRouter } from 'next/router';
-import '../../../styles/survey/index.css';
+import '@/styles/survey/index.css';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -20,9 +20,9 @@ const SurveyMainPage = () => {
     // 첫 화면 시작될때 토큰을 통해 업체명 가져오기
 
     useEffect(() => {
-        const getData = async () => {
+        const getData = () => {
             if (token) {
-                await GetAxios(`${process.env.NEXT_PUBLIC_SURVEY_CHECK_TOKEN_API}/${token}`);
+                GetAxios(`${process.env.NEXT_PUBLIC_SURVEY_CHECK_TOKEN_API}/${token}`);
             }
         };
         getData();
@@ -37,7 +37,7 @@ const SurveyMainPage = () => {
                 window.location.href = '/survey/error';
             }
         }
-    }, [loaded]);
+    }, [loaded, errer, data]);
 
     return (
         <div className="Main">
