@@ -21,6 +21,8 @@ const QuestionPage = () => {
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const questionRef = useRef(Data.map(() => createRef()));
+    // 페이지 개선 스테이트
+    const [pageNum, setPageNum] = useState(0);
 
     useEffect(() => {
         if (loaded) {
@@ -33,18 +35,20 @@ const QuestionPage = () => {
     useEffect(() => {
         // checkNum이 변경될 때마다 scrollIntoView 호출
         if (currentQuestion >= 0 && currentQuestion < 11) {
-            questionRef.current[currentQuestion]?.current.scrollIntoView({ behavior: 'auto', block: 'center' });
+            questionRef.current[currentQuestion]?.current?.scrollIntoView({ behavior: 'auto', block: 'center' });
         }
     }, [currentQuestion]);
 
     const handleNextQuestion = () => {
         if (currentQuestion <= 10 && checkNum[currentQuestion] !== undefined) {
             setCurrentQuestion(currentQuestion + 1);
+            setPageNum(pageNum + 1);
         }
     };
 
     const handlePrevQuestion = () => {
         if (currentQuestion > 0) {
+            setPageNum(pageNum - 1);
             setCurrentQuestion(currentQuestion - 1);
         }
     };
@@ -102,7 +106,23 @@ const QuestionPage = () => {
                 </div>
                 <br />
                 <div className="Body">
-                    {Data.map((item, idx) => (
+                    <QuestionBox
+                        page={pageNum}
+                        idx={pageNum}
+                        currentQuestion={currentQuestion}
+                        questionRef={questionRef}
+                        items={Data[pageNum]}
+                        checkNum={checkNum}
+                        updateCheckNum={updateCheckNum}
+                        writeAnswer={writeAnswer}
+                        updateWriteAnswer={updateWriteAnswer}
+                        handlePrevQuestion={handlePrevQuestion}
+                        handleNextQuestion={handleNextQuestion}
+                        sendToServer={sendToserver}
+                        setPageNum={setPageNum}
+                    />
+
+                    {/* {Data.map((item, idx) => (
                         <QuestionBox
                             key={idx}
                             idx={idx}
@@ -117,7 +137,7 @@ const QuestionPage = () => {
                             handleNextQuestion={handleNextQuestion}
                             sendToServer={sendToserver}
                         />
-                    ))}
+                    ))} */}
                 </div>
             </div>
         </>
