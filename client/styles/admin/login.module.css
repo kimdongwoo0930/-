@@ -1,0 +1,320 @@
+.Main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+.Header {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+/* ============ */
+/* 애니메이션 */
+/* ============ */
+.rotateRight {
+    -webkit-animation-name: rotateRight;
+    animation-name: rotateRight;
+    animation-duration: 1s;
+}
+@-webkit-keyframes rotateRight {
+    0% {
+        opacity: 1;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: perspective(800px) rotateY(0deg) translate3d(0px);
+        transform: perspective(800px) rotateY(0deg) translate3d(0px);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        -webkit-transform: perspective(800px) rotateY(180deg) translateZ(150px);
+        transform: perspective(800px) rotateY(180deg) translateZ(150px);
+    }
+}
+@keyframes rotateRight {
+    0% {
+        opacity: 1;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: perspective(800px) rotateY(0deg) translate3d(0px);
+        transform: perspective(800px) rotateY(0deg) translate3d(0px);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        -webkit-transform: perspective(800px) rotateY(180deg) translateZ(150px);
+        transform: perspective(800px) rotateY(180deg) translateZ(150px);
+    }
+}
+.rotateLeft {
+    -webkit-animation-name: rotateLeft;
+    animation-name: rotateLeft;
+    animation-duration: 1s;
+}
+@-webkit-keyframes rotateLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        -webkit-transform: perspective(800px) rotateY(-180deg) translateZ(300px);
+        transform: perspective(800px) rotateY(-180deg) translateZ(300px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: perspective(800px) rotateY(0deg) translateZ(0px);
+        transform: perspective(800px) rotateY(0deg) translateZ(0px);
+    }
+}
+@keyframes rotateLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform-origin: 30% 0;
+        transform-origin: 300% 0;
+        -webkit-transform: perspective(600px) rotateY(-180deg) translateZ(300px);
+        transform: perspective(600px) rotateY(-180deg) translateZ(300px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: perspective(800px) rotateY(0deg) translateZ(0px);
+        transform: perspective(800px) rotateY(0deg) translateZ(0px);
+    }
+}
+/* ============ */
+.SmallRectangle {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(236, 0, 140);
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+.BigRectangle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(236, 0, 140);
+    transform: rotate(45deg);
+}
+
+.LogoTitle {
+    color: rgb(53, 27, 111);
+    font-weight: bold;
+    margin: 0 0 0 10px;
+    font-size: x-large;
+}
+
+.LogoDescription {
+    color: rgb(53, 27, 111);
+    font-size: small;
+    margin-left: 10px;
+    margin: 0 0 0 11px;
+    font-weight: bold;
+}
+/* ------------------------------------------------------*/
+/*  로그인  */
+.Body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .Body:hover {
+    transform: perspective(800px) rotateY(180deg);
+} */
+
+/* ========================================================================================================================= */
+/* 스위치 */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #3c3c3c;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 40px;
+    width: 40px;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #0e6eb8;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(150px);
+    background-color: #3c3c3c;
+}
+
+/*------ ADDED CSS ---------*/
+.slider:after {
+    content: '로그인';
+    color: white;
+    display: block;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider:after {
+    content: '회원가입';
+}
+
+/* ================================================================================================================== */
+
+.login_wrapper {
+    background: linear-gradient(rgb(80, 67, 52), rgb(111, 93, 73));
+}
+
+.coolinput {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: static;
+    max-width: 280px;
+}
+
+.coolinput label.text {
+    font-size: 0.75rem;
+    color: #818cf8;
+    font-weight: 700;
+    position: relative;
+    top: 0.5rem;
+    margin: 0 0 0 7px;
+    padding: 0 3px;
+    background-color: #ffffff;
+    width: fit-content;
+}
+
+.coolinput input[type='text'].input {
+    padding: 11px 10px;
+    font-size: 0.75rem;
+    border: 2px #818cf8 solid;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.coolinput input[type='text'].input:focus {
+    outline: none;
+    background-color: lightgray;
+}
+
+.coolinput input[type='password'].input {
+    padding: 11px 10px;
+    font-size: 0.75rem;
+    border: 2px #818cf8 solid;
+    border-radius: 5px;
+    background-color: å#ffffff;
+}
+
+.coolinput input[type='password'].input:focus {
+    outline: none;
+    background-color: lightgray;
+}
+
+.Wrapper {
+    width: 400px;
+    height: 500px;
+    border-radius: 30px;
+    border: 3px solid #51a6ff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login_box {
+    width: 300px;
+    margin-top: 100px;
+}
+
+.coolinput {
+    margin-top: 10px;
+}
+
+.submit {
+    margin-top: 100px;
+    width: 18rem;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    background: rgb(255, 255, 255);
+    color: blueviolet;
+    border-radius: 0.5rem;
+    border-bottom: 2px solid blueviolet;
+    border-right: 2px solid blueviolet;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transition-duration: 1s;
+    transition-property: border-top, border-left, border-bottom, border-right, box-shadow;
+    cursor: pointer;
+}
+
+.submit:hover {
+    border-top: 2px solid blueviolet;
+    border-left: 2px solid blueviolet;
+    border-bottom: 2px solid rgb(238, 103, 238);
+    border-right: 2px solid rgb(238, 103, 238);
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px;
+}
+
+/* ========== 회원가입 부분 ========== */
+
+.register_box {
+    width: 300px;
+    margin-top: 80px;
+}
+
+.register_box > .submit {
+    margin-top: 50px;
+}

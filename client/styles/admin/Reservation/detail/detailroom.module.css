@@ -1,0 +1,391 @@
+.container {
+    width: 510px;
+    height: 500px;
+    display: flex;
+    position: relative;
+    border: 3px solid black;
+}
+
+.RoomBox_205,
+.RoomBox_105 {
+    left: 10px;
+}
+
+.RoomBox_206,
+.RoomBox_204,
+.RoomBox_106,
+.RoomBox_104 {
+    left: 36px;
+}
+
+.RoomBox_207,
+.RoomBox_203,
+.RoomBox_107,
+.RoomBox_103 {
+    left: 64px;
+}
+.RoomBox_208,
+.RoomBox_202,
+.RoomBox_108,
+.RoomBox_102 {
+    left: 92px;
+}
+
+.RoomBox_209,
+.RoomBox_201,
+.RoomBox_109,
+.RoomBox_101 {
+    left: 120px;
+}
+.RoomBox_210,
+.RoomBox_110 {
+    left: 148px;
+}
+.RoomBox_211,
+.RoomBox_111 {
+    left: 176px;
+}
+.RoomBox_227,
+.RoomBox_127 {
+    left: 225px;
+}
+.RoomBox_226,
+.RoomBox_126,
+.RoomBox_212,
+.RoomBox_112 {
+    left: 253px;
+}
+.RoomBox_225,
+.RoomBox_213,
+.RoomBox_125,
+.RoomBox_113 {
+    left: 281px;
+}
+.RoomBox_224,
+.RoomBox_214,
+.RoomBox_124,
+.RoomBox_114 {
+    left: 309px;
+}
+
+.RoomBox_223,
+.RoomBox_215,
+.RoomBox_123,
+.RoomBox_115 {
+    left: 337px;
+}
+.RoomBox_222,
+.RoomBox_216,
+.RoomBox_122,
+.RoomBox_116 {
+    left: 365px;
+}
+
+.RoomBox_221,
+.RoomBox_217,
+.RoomBox_121,
+.RoomBox_117 {
+    left: 393px;
+}
+.RoomBox_220,
+.RoomBox_218,
+.RoomBox_120,
+.RoomBox_118 {
+    left: 421px;
+}
+.RoomBox_219,
+.RoomBox_119 {
+    left: 449px;
+}
+
+.RoomBox_201 {
+    top: 120px;
+}
+
+.RoomBox_202 {
+    top: 140px;
+}
+.RoomBox_203 {
+    top: 160px;
+}
+.RoomBox_204 {
+    top: 180px;
+}
+
+.RoomBox_205 {
+    top: 100px;
+}
+.RoomBox_206 {
+    top: 80px;
+}
+.RoomBox_207 {
+    top: 60px;
+}
+.RoomBox_208 {
+    top: 40px;
+}
+.RoomBox_209 {
+    top: 20px;
+}
+.RoomBox_210 {
+    top: 20px;
+}
+.RoomBox_211 {
+    top: 20px;
+}
+/* ================================= */
+/* 2층 왼쪽 끝  */
+/* ================================= */
+.RoomBox_212 {
+    top: 120px;
+}
+.RoomBox_213 {
+    top: 140px;
+}
+.RoomBox_214 {
+    top: 160px;
+}
+.RoomBox_215 {
+    top: 180px;
+}
+
+.RoomBox_216 {
+    top: 200px;
+}
+.RoomBox_217 {
+    top: 220px;
+}
+
+.RoomBox_218 {
+    top: 240px;
+}
+.RoomBox_222 {
+    top: 100px;
+}
+.RoomBox_221 {
+    top: 120px;
+}
+.RoomBox_220 {
+    top: 140px;
+}
+.RoomBox_219 {
+    top: 160px;
+}
+
+.RoomBox_223 {
+    top: 80px;
+}
+.RoomBox_224 {
+    top: 60px;
+}
+.RoomBox_225 {
+    top: 40px;
+}
+.RoomBox_226 {
+    top: 20px;
+}
+.RoomBox_227 {
+    top: 20px;
+}
+/* ================================= */
+/* 2층 오른쪽 끝  */
+/* ================================= */
+.RoomBox_101 {
+    top: 320px;
+}
+.RoomBox_102 {
+    top: 340px;
+}
+.RoomBox_103 {
+    top: 360px;
+}
+.RoomBox_104 {
+    top: 380px;
+}
+
+.RoomBox_105 {
+    top: 300px;
+}
+.RoomBox_106 {
+    top: 280px;
+}
+.RoomBox_107 {
+    top: 260px;
+}
+.RoomBox_108 {
+    top: 240px;
+}
+.RoomBox_109 {
+    top: 220px;
+}
+.RoomBox_110 {
+    top: 220px;
+}
+.RoomBox_111 {
+    top: 220px;
+}
+/* ================================= */
+/* 1층 왼쪽 끝  */
+/* ================================= */
+
+.RoomBox_112 {
+    top: 320px;
+}
+.RoomBox_113 {
+    top: 340px;
+}
+.RoomBox_114 {
+    top: 360px;
+}
+.RoomBox_115 {
+    top: 380px;
+}
+
+.RoomBox_116 {
+    top: 400px;
+}
+.RoomBox_117 {
+    top: 420px;
+}
+
+.RoomBox_118 {
+    top: 440px;
+}
+
+.RoomBox_119 {
+    top: 360px;
+}
+.RoomBox_120 {
+    top: 340px;
+}
+.RoomBox_121 {
+    top: 320px;
+}
+.RoomBox_122 {
+    top: 300px;
+}
+
+.RoomBox_123 {
+    top: 280px;
+}
+.RoomBox_124 {
+    top: 260px;
+}
+.RoomBox_125 {
+    top: 240px;
+}
+.RoomBox_126 {
+    top: 220px;
+}
+.RoomBox_127 {
+    top: 220px;
+}
+.RoomBox_101,
+.RoomBox_102,
+.RoomBox_103,
+.RoomBox_104,
+.RoomBox_105,
+.RoomBox_106,
+.RoomBox_107,
+.RoomBox_108,
+.RoomBox_109,
+.RoomBox_110,
+.RoomBox_111,
+.RoomBox_112,
+.RoomBox_113,
+.RoomBox_114,
+.RoomBox_115,
+.RoomBox_116,
+.RoomBox_117,
+.RoomBox_118,
+.RoomBox_119,
+.RoomBox_120,
+.RoomBox_121,
+.RoomBox_122,
+.RoomBox_123,
+.RoomBox_124,
+.RoomBox_125,
+.RoomBox_126,
+.RoomBox_127,
+.RoomBox_201,
+.RoomBox_202,
+.RoomBox_203,
+.RoomBox_204,
+.RoomBox_205,
+.RoomBox_206,
+.RoomBox_207,
+.RoomBox_208,
+.RoomBox_209,
+.RoomBox_210,
+.RoomBox_211,
+.RoomBox_212,
+.RoomBox_213,
+.RoomBox_214,
+.RoomBox_215,
+.RoomBox_216,
+.RoomBox_217,
+.RoomBox_218,
+.RoomBox_219,
+.RoomBox_220,
+.RoomBox_221,
+.RoomBox_222,
+.RoomBox_223,
+.RoomBox_224,
+.RoomBox_225,
+.RoomBox_226,
+.RoomBox_227 {
+    width: 25px;
+    height: 40px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    background-color: #a5e3b0;
+}
+
+.titleBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 13px;
+    font-weight: bold;
+    flex: 1;
+    border-bottom: 1px solid black;
+}
+
+.firstFloor {
+    font-size: 30px;
+    position: absolute;
+    top: 330px;
+    left: 190px;
+}
+.secondFloor {
+    font-size: 30px;
+    position: absolute;
+    top: 130px;
+    left: 190px;
+}
+
+.organizationColor {
+    width: 140px;
+    height: 80px;
+    position: absolute;
+    flex-direction: column;
+    right: 0;
+    display: flex;
+}
+.colorBox {
+    flex: 1;
+    display: flex;
+    border: 1px solid gray;
+    align-items: center;
+    justify-content: space-between;
+}
+.colorBox > div {
+    font-size: 13px;
+    margin-right: 10px;
+    font-weight: bold;
+}

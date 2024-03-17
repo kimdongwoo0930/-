@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @Slf4j
+@RequestMapping("/api/v1/survey")
 public class SurveyController {
 
     private final SurveyService surveyService;
@@ -23,7 +24,7 @@ public class SurveyController {
     url 을 통한 업체
     ==================
      */
-    @GetMapping("/api/v1/generate-token/{organization}")
+    @GetMapping("/generate-token/{organization}")
     public ResponseTokenDto GenerateToken(@PathVariable String organization){
         return surveyService.GenerateToken(organization);
     }
@@ -33,13 +34,13 @@ public class SurveyController {
     =================
     response : false -> 미 만료 , true -> 만료
      */
-    @GetMapping("/api/v1/check-token/{token}")
+    @GetMapping("/check-token/{token}")
     public CheckTokenResponseDto CheckToken(@PathVariable String token){
         return surveyService.CheckToken(token);
     }
 
 
-    @PostMapping("/api/v1/submit-survey-response")
+    @PostMapping("/submit-survey-response")
     public SurveyToken SubmitResponseToSurvey(@RequestBody SurveyDto data){
         if(data != null){
             return surveyService.save(data);

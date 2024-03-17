@@ -1,9 +1,5 @@
-/*
-    설문조사 시작 페이지
-*/
-
+import styles from '@/styles/survey/index.module.css'; // 변경된 파일 경로와 이름
 import { useRouter } from 'next/router';
-import '@/styles/survey/index.css';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -15,7 +11,7 @@ const SurveyMainPage = () => {
     const { data, errer, loaded, GetAxios } = useAxiosApi();
 
     const [organization, setOrganization] = useState('');
-    const [address, setAdress] = useState('');
+    const [address, setAddress] = useState('');
 
     // 첫 화면 시작될때 토큰을 통해 업체명 가져오기
 
@@ -32,7 +28,7 @@ const SurveyMainPage = () => {
         if (loaded) {
             if (!data?.expiration) {
                 setOrganization(data?.organization);
-                setAdress(`/survey/${data?.token}/question`);
+                setAddress(`/survey/${data?.token}/question`);
             } else {
                 window.location.href = '/survey/error';
             }
@@ -40,27 +36,34 @@ const SurveyMainPage = () => {
     }, [loaded, errer, data]);
 
     return (
-        <div className="Main">
-            <div className="Header">
+        <div className={styles.Main}>
+            {' '}
+            {/* 변경된 클래스명 */}
+            <div className={styles.Header}>
+                {' '}
+                {/* 변경된 클래스명 */}
                 <div>
-                    <div className="SmallRectangle"></div>
-                    <div className="SmallRectangle"></div>
+                    <div className={styles.SmallRectangle}></div> {/* 변경된 클래스명 */}
+                    <div className={styles.SmallRectangle}></div> {/* 변경된 클래스명 */}
                 </div>
                 <div>
-                    <div className="BigRectangle"></div>
+                    <div className={styles.BigRectangle}></div> {/* 변경된 클래스명 */}
                 </div>
                 <div>
-                    <p className="LogoTitle">Heungkuk</p>
-                    <p className="LogoDescription">Life Insurance</p>
+                    <p className={styles.LogoTitle}>Heungkuk</p> {/* 변경된 클래스명 */}
+                    <p className={styles.LogoDescription}>Life Insurance</p> {/* 변경된 클래스명 */}
                 </div>
             </div>
             <br />
-
-            <div className="Title">
+            <div className={styles.Title}>
+                {' '}
+                {/* 변경된 클래스명 */}
                 <p>흥국생명연수원 이용 만족도 조사</p>
             </div>
-            <div className="Body">
-                <p className="introduce">
+            <div className={styles.Body}>
+                {' '}
+                {/* 변경된 클래스명 */}
+                <p className={styles.introduce}>
                     저희 흥국생명연수원을 찾아주신 {organization} 고객님께 감사드립니다. <br />
                     <br />
                     고객님께 보다 나은 서비스를 제공해드리기 위해 이용 만족도 조사를 실시하고자 합니다.
@@ -77,7 +80,9 @@ const SurveyMainPage = () => {
                         alignItems: 'center',
                     }}
                 >
-                    <div className="start">
+                    <div className={styles.start}>
+                        {' '}
+                        {/* 변경된 클래스명 */}
                         <Link
                             href={address}
                             style={{

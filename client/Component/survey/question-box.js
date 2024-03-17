@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import '@/styles/survey/question.css';
-
+import styles from '@/styles/survey/question.module.css'; // 변경된 파일 경로와 이름
 import AnswerInput from './AnswerInput';
 
 const QuestionBox = ({
@@ -19,13 +18,21 @@ const QuestionBox = ({
     sendToServer,
 }) => {
     return (
-        <div key={idx} className={`question-box`} ref={questionRef.current[idx]}>
-            <div className="question-title">
+        <div key={idx} className={styles.questionBox}>
+            {' '}
+            {/* 변경된 클래스명 */}
+            <div className={styles.questionTitle}>
+                {' '}
+                {/* 변경된 클래스명 */}
                 {idx + 1}. {items?.question}
             </div>
-            <div className="input-container">
+            <div className={styles.inputContainer}>
+                {' '}
+                {/* 변경된 클래스명 */}
                 {items?.answer.map((item, num) => (
-                    <div className="input-wrapper" key={num}>
+                    <div className={styles.inputWrapper} key={num}>
+                        {' '}
+                        {/* 변경된 클래스명 */}
                         <input
                             type="checkbox"
                             checked={checkNum[idx] === num}
@@ -43,8 +50,9 @@ const QuestionBox = ({
                     </div>
                 ))}
             </div>
-
-            <div className="answer-container">
+            <div className={styles.answerContainer}>
+                {' '}
+                {/* 변경된 클래스명 */}
                 <AnswerInput
                     idx={idx}
                     setAnswer={updateWriteAnswer}
@@ -53,22 +61,32 @@ const QuestionBox = ({
                     items={items}
                 />
             </div>
-            <div className="box-button-container">
+            <div className={styles.boxButtonContainer}>
+                {' '}
+                {/* 변경된 클래스명 */}
                 {idx !== 10 ? (
                     <>
-                        <button className="box-button" onClick={handlePrevQuestion}>
+                        <button className={styles.boxButton} onClick={handlePrevQuestion}>
+                            {' '}
+                            {/* 변경된 클래스명 */}
                             뒤로
                         </button>
-                        <button className="box-button" onClick={handleNextQuestion}>
+                        <button className={styles.boxButton} onClick={handleNextQuestion}>
+                            {' '}
+                            {/* 변경된 클래스명 */}
                             다음
                         </button>
                     </>
                 ) : (
                     <>
-                        <button className="box-button" onClick={handlePrevQuestion}>
+                        <button className={styles.boxButton} onClick={handlePrevQuestion}>
+                            {' '}
+                            {/* 변경된 클래스명 */}
                             뒤로
                         </button>
-                        <button className="box-button" onClick={sendToServer}>
+                        <button className={styles.boxButton} onClick={sendToServer}>
+                            {' '}
+                            {/* 변경된 클래스명 */}
                             제출
                         </button>
                     </>

@@ -1,4 +1,4 @@
-import '@/styles/survey/question.css';
+import styles from '@/styles/survey/question.module.css'; // 변경된 파일 경로와 이름
 import { useEffect, useState } from 'react';
 
 const AnswerInput = ({ page, idx, setAnswer, Answer, checkNum, items }) => {
@@ -24,7 +24,7 @@ const AnswerInput = ({ page, idx, setAnswer, Answer, checkNum, items }) => {
 
     return (
         <input
-            className={'answer-input'}
+            className={styles.answerInput}
             type="text"
             placeholder={
                 idx < 4

@@ -1,0 +1,122 @@
+/* 글씨채 */
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ===================================== */
+
+.aside {
+    width: 80px;
+    height: 100%;
+    background-color: rgb(53, 27, 111);
+    box-shadow: 0px 0px 20px 0px rgb(53, 27, 111);
+}
+
+.LogoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding-top: 10px;
+}
+
+.SmallRectangle {
+    width: 15px;
+    height: 15px;
+    background-color: rgb(236, 0, 140);
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+.BigRectangle {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(236, 0, 140);
+    transform: rotate(45deg);
+}
+/* ===================================== */
+/* 사이드 메뉴 아이콘 부분 */
+/* ===================================== */
+.NavContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.NavContainer > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    /* background-color: red; */
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.NavContainer > div:hover {
+    background-color: #ec008c;
+    border-radius: 10px;
+}
+
+.NavContainer > div > a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ========================== */
+.headerMenuContainer {
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.headerMenuContainer > h1 {
+    font-size: 30px;
+    font-style: normal;
+
+    margin-left: 20px;
+    font-family: BMJUA;
+}
+
+.headerMenuContainer > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.headerMenuContainer > div > span {
+    width: 100px;
+    height: 25px;
+    margin-right: 30px;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: BMJUA;
+}
+
+.headerMenuContainer > div > span:hover {
+    color: #ec008c;
+    cursor: pointer;
+    border-bottom: 2px solid #ec008c;
+}

@@ -1,0 +1,293 @@
+@page {
+    size: 793px 1123px;
+    margin: 0;
+}
+/* =============== */
+/* 간단한 글자들 */
+.TrashText1 {
+    position: absolute;
+    left: 90px;
+    top: 180px;
+    font-weight: bold;
+}
+.TrashText2 {
+    font-weight: bold;
+    position: absolute;
+    left: 50px;
+    top: 230px;
+}
+.TrashText3 {
+    color: blue;
+    font-weight: bold;
+    position: absolute;
+    left: 50px;
+    top: 890px;
+    font-size: 12px;
+}
+.TrashText4 {
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    left: 50px;
+    top: 905px;
+    font-size: 12px;
+}
+
+.TrashText5 {
+    font-weight: bold;
+    position: absolute;
+    left: 50px;
+    top: 920px;
+    font-size: 14px;
+}
+
+/* =============== */
+.root {
+    width: 793px;
+    height: 1123px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    position: relative;
+
+    min-width: 793px;
+    min-height: 1123px;
+    padding: 0px 50px;
+    box-sizing: border-box;
+}
+
+.Title {
+}
+
+.TitleText {
+    font-weight: bold;
+    font-size: 40px;
+    position: absolute;
+    top: 30px;
+    /* 가운데 정렬 */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.SmallRectangle {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(236, 0, 140);
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+.Logo {
+    display: flex;
+    position: absolute;
+    left: 50px;
+    top: 30px;
+}
+.Logo > div:first-child {
+    display: flex;
+}
+
+.BigRectangle {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: rgb(236, 0, 140);
+    transform: rotate(45deg);
+    margin-top: 3px;
+}
+
+.LogoText {
+    color: rgb(53, 27, 111);
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.LogoSubText {
+    color: rgb(53, 27, 111);
+    font-weight: bold;
+    font-size: 10px;
+    margin-left: 13px;
+    margin-top: -5px;
+}
+
+/* =========================== */
+.CompanyName {
+    width: 250px;
+
+    display: flex;
+    border-bottom: 2px solid black;
+    position: absolute;
+    left: 50px;
+    top: 130px;
+}
+
+.CompanyNameTitle {
+    width: 200px;
+    font-weight: bold;
+    font-size: 20px;
+
+    text-align: center;
+}
+
+.CompanyNameContent {
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* ============================ */
+.host {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+}
+
+.host > table {
+    width: 350px;
+    border-collapse: collapse;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+}
+.subHost {
+    width: 350px;
+    font-weight: bold;
+    font-size: 12px;
+    position: absolute;
+
+    top: 180px;
+    right: 50px;
+}
+.subHost > div {
+    margin-bottom: 3px;
+}
+/* ==================== */
+/* 테이블 부분 */
+
+.organizationIntroduce {
+    border-collapse: collapse;
+    width: 693px;
+    position: absolute;
+    top: 250px;
+
+    font-weight: bold;
+
+    font-size: 15px;
+}
+
+.organizationIntroduce > tbody > tr > td:first-child {
+    text-align: center;
+}
+
+.organizationIntroduce > tbody > tr > td:nth-child(2) {
+    padding-left: 30px;
+}
+
+.detail {
+    border-collapse: collapse;
+    width: 693px;
+    height: 300px;
+    position: absolute;
+    top: 330px;
+}
+
+.detail > thead > tr > td {
+    border: 1px solid black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.detail > tbody > tr > td:nth-child(0),
+.detail > tbody > tr > td:nth-child(1) {
+    border: 1px solid black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.detail > tbody > tr > td {
+    text-align: right;
+    font-weight: bold;
+    font-size: 14px;
+
+    padding-right: 10px;
+}
+/* ======================= */
+.food {
+    border-collapse: collapse;
+    width: 693px;
+    height: 70px;
+
+    position: absolute;
+    top: 640px;
+}
+
+.food > tbody > tr > td {
+    text-align: right;
+    font-weight: bold;
+    font-size: 15px;
+
+    padding-right: 10px;
+}
+
+.foodDetail {
+    border-collapse: collapse;
+    width: 693px;
+    table-layout: fixed;
+    height: 70px;
+    position: absolute;
+    top: 780px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+}
+
+.foodDetail > tbody > tr:last-child {
+    background-color: rgb(240, 240, 240);
+}
+
+/* =========================== */
+/* Info */
+.InfoBox {
+    width: 693px;
+    height: 160px;
+
+    position: absolute;
+    top: 940px;
+    border: 2px solid black;
+    font-size: 12px;
+}
+.Info1 {
+    font-weight: bold;
+    color: dodgerblue;
+
+    font-size: 12px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+.Info2,
+.Info3 {
+    margin-left: 30px;
+}
+
+.Info4,
+.Info5 {
+    color: red;
+    margin-left: 30px;
+}
+
+.Info6 {
+    margin-left: 15px;
+    font-size: 12px;
+}
+
+.Info7,
+.Info8,
+.Info9 {
+    margin-left: 30px;
+}
