@@ -1,0 +1,257 @@
+.organization {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+.organization > label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.organization > input {
+    margin-left: 43px;
+    width: 150px;
+    height: 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.colorSelector {
+    margin-left: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.colorSelector > div {
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+}
+
+/* ============================== */
+/* 인원 수 및 과정명 */
+.people {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+}
+
+.people > label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.people > input {
+    margin-left: 30px;
+    width: 50px;
+    height: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.people > label:nth-child(3) {
+    margin-left: 30px;
+}
+
+.people > input:nth-child(4) {
+    width: 170px;
+    font-size: 13px;
+}
+
+/* ============================== */
+/* 강의실 선택 */
+/* ============================== */
+
+.classRoom {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+}
+
+.classRoom > label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.classRoom > div > div {
+    margin-bottom: 15px;
+}
+
+.classRoom > div > div > select {
+    margin-left: 15px;
+    width: 100px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.classRoom > div > div > select:nth-child(1) {
+    width: 70px;
+}
+
+.classRoom > div > div > div {
+    /* background-color: red; */
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.classRoom > div > div > input {
+    width: 100px;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* ================================= */
+.reservationDate {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+}
+
+.reservationDate > label {
+    font-size: 15px;
+    font-weight: bold;
+}
+.reservationDate > input {
+    margin-left: 30px;
+    width: 150px;
+    height: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.reservationDate > div {
+    font-size: 30px;
+    margin-left: 15px;
+}
+/* ================================ */
+
+.customerInfo {
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.customerInfo > div > label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.customerInfo > div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.customerInfo > div > input {
+    margin-left: 15px;
+    width: 100px;
+    height: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* =================================== */
+.Restaurant {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+    align-items: center;
+}
+.Restaurant > div {
+    width: 80px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.Restaurant > label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.Restaurant > input {
+    margin-left: 15px;
+    width: 40px;
+    height: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+.Restaurant > span {
+    font-weight: bold;
+    font-size: 13px;
+    margin-right: 20px;
+}
+
+/* =================================== */
+.reservationState {
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+}
+
+.reservationState > label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.reservationState > select {
+    margin-left: 30px;
+    width: 100px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+/* ========================== */
+.reservationMemo {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.reservationMemo > label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.reservationMemo > textarea {
+    margin-left: 55px;
+    width: 400px;
+    height: 100px;
+    font-size: 15px;
+    font-weight: bold;
+    vertical-align: top;
+    overflow-wrap: break-word;
+}
+/* ========================== */
+/* 숙소 디자인 */
+/* ========================== */
+.roomSelector {
+    width: 100%;
+    padding-bottom: 100px;
+}
+.roomSelector > div {
+    display: flex;
+}
+.roomSelector > input {
+    font-display: right;
+}
+
+.roomSelector > div > select {
+    width: 120px;
+    height: 20px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.roomSelector > div > label {
+    font-size: 13px;
+    font-weight: bold;
+}

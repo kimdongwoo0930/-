@@ -1,6 +1,5 @@
-import '@/styles/survey/question.css';
-
-import datas from '@/public/survey/data.js';
+import styles from '@/styles/survey/question.module.css'; // 변경된 파일 경로와 이름
+import datas from '@/Data/survey/data.js';
 
 import { useRef, useEffect, useState, createRef } from 'react';
 import { useRouter } from 'next/router';
@@ -90,22 +89,28 @@ const QuestionPage = () => {
 
     return (
         <>
-            <div className="Main">
-                <div className="Header">
+            <div className={styles.Main}>
+                {' '}
+                {/* 변경된 클래스명 */}
+                <div className={styles.Header}>
+                    {' '}
+                    {/* 변경된 클래스명 */}
                     <div style={{}}>
-                        <div className="SmallRectangle"></div>
-                        <div className="SmallRectangle"></div>
+                        <div className={styles.SmallRectangle}></div> {/* 변경된 클래스명 */}
+                        <div className={styles.SmallRectangle}></div> {/* 변경된 클래스명 */}
                     </div>
                     <div style={{}}>
-                        <div className="BigRectangle"></div>
+                        <div className={styles.BigRectangle}></div> {/* 변경된 클래스명 */}
                     </div>
                     <div style={{}}>
-                        <p className="LogoTitle">Heungkuk</p>
-                        <p className="LogoDescription">Life Insurance</p>
+                        <p className={styles.LogoTitle}>Heungkuk</p> {/* 변경된 클래스명 */}
+                        <p className={styles.LogoDescription}>Life Insurance</p> {/* 변경된 클래스명 */}
                     </div>
                 </div>
                 <br />
-                <div className="Body">
+                <div className={styles.Body}>
+                    {' '}
+                    {/* 변경된 클래스명 */}
                     <QuestionBox
                         page={pageNum}
                         idx={pageNum}
@@ -121,7 +126,6 @@ const QuestionPage = () => {
                         sendToServer={sendToserver}
                         setPageNum={setPageNum}
                     />
-
                     {/* {Data.map((item, idx) => (
                         <QuestionBox
                             key={idx}

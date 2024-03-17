@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../../styles/survey/make-url.css';
+import styles from '@/styles/survey/make-url.module.css'; // 변경된 파일 경로와 이름
 
 import useAxiosApi from '@/Hooks/AxiosApi';
 
@@ -42,29 +42,37 @@ ${url} `;
             handleCopyClipBoard(Message);
         }
     }, [loaded]);
+
     return (
         <>
-            <div className="Main">
-                <div className="Header">
+            <div className={styles.Main}>
+                {' '}
+                {/* 변경된 클래스명 */}
+                <div className={styles.Header}>
+                    {' '}
+                    {/* 변경된 클래스명 */}
                     <div>
-                        <div className="SmallRectangle"></div>
-                        <div className="SmallRectangle"></div>
+                        <div className={styles.SmallRectangle}></div> {/* 변경된 클래스명 */}
+                        <div className={styles.SmallRectangle}></div> {/* 변경된 클래스명 */}
                     </div>
                     <div>
-                        <div className="BigRectangle"></div>
+                        <div className={styles.BigRectangle}></div> {/* 변경된 클래스명 */}
                     </div>
                     <div>
-                        <p className="LogoTitle">Heungkuk</p>
-                        <p className="LogoDescription">Life Insurance</p>
+                        <p className={styles.LogoTitle}>Heungkuk</p> {/* 변경된 클래스명 */}
+                        <p className={styles.LogoDescription}>Life Insurance</p> {/* 변경된 클래스명 */}
                     </div>
                 </div>
                 <br />
-
-                <div className="Title">
+                <div className={styles.Title}>
+                    {' '}
+                    {/* 변경된 클래스명 */}
                     <p>흥국생명연수원 이용 만족도 조사</p>
                 </div>
-                <div className="Body">
-                    <p className="introduce">설문조사 토큰을 생성합니다.</p>
+                <div className={styles.Body}>
+                    {' '}
+                    {/* 변경된 클래스명 */}
+                    <p className={styles.introduce}>설문조사 토큰을 생성합니다.</p>
                     <div
                         style={{
                             width: '100%',
@@ -87,7 +95,9 @@ ${url} `;
                             placeholder={'업체명을 입력해주세요.'}
                         />
                     </div>
-                    <button className="submit-button" onClick={handleGenerate}>
+                    <button className={styles.submitButton} onClick={handleGenerate}>
+                        {' '}
+                        {/* 변경된 클래스명 */}
                         생성
                     </button>
                     <div style={{ width: '90%', paddingTop: 40 }}>

@@ -1,0 +1,452 @@
+/* 글씨채 */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.Body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 2px solid rgb(191, 191, 191);
+    box-shadow: 0px 0px 10px 0px rgb(191, 191, 191);
+    max-width: 550px;
+    min-width: 550px;
+    overflow: scroll;
+    position: relative;
+    transition: width 0.5s;
+
+    font-family: BMJUA;
+}
+
+/* ============= */
+/* 애니메이션 */
+/* ============= */
+.animate_enter {
+    opacity: 0;
+    transform: translateX(100%);
+}
+.animate_enter_active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 1s;
+}
+
+.animate_exit_active {
+    opacity: 1;
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+/* ============== */
+/* 헤더 */
+/* ============== */
+.Header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid gray;
+    height: 60px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.Header > span {
+    margin-left: 10px;
+    font-size: 20px;
+    color: forestgreen;
+    font-weight: bolder;
+    font-family: BMJUA;
+}
+.Header > div {
+    display: flex;
+    gap: 10px;
+    margin-right: 10px;
+}
+.Header > div > button:nth-child(1) {
+    width: 80px;
+    height: 30px;
+    background-color: darkgray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 12px;
+    font-family: BMJUA;
+}
+.Header > div > button:nth-child(2) {
+    width: 80px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgb(104, 104, 111);
+    cursor: pointer;
+    color: white;
+    font-weight: bolder;
+    font-family: BMJUA;
+}
+
+.Header > div > button:nth-child(3) {
+    width: 80px;
+    height: 30px;
+    background-color: forestgreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+.Header > div > button:nth-child(1):hover {
+    background-color: gray;
+}
+.Header > div > button:nth-child(2):hover {
+    background-color: rgb(67, 67, 72);
+}
+
+.Header > div > button:nth-child(3):hover {
+    background-color: darkgreen;
+}
+
+/* === 업체명, 업체 색 === */
+.Container {
+    width: 95%;
+    margin-top: 50px;
+    border-collapse: collapse;
+}
+
+.NameColor {
+    width: 100%;
+    height: 30px;
+    display: flex;
+}
+
+.Name {
+    flex: 1;
+    display: flex;
+}
+.Color {
+    display: flex;
+    flex: 1;
+}
+.titleBox {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+    font-weight: bolder;
+    font-size: 13px;
+}
+.inputBox {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+}
+.input {
+    width: 90%;
+    height: 60%;
+    border: 1px solid rgb(191, 191, 191);
+}
+.colorBox {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+}
+.colorBox > div {
+    width: 90%;
+    height: 60%;
+    display: flex;
+    gap: 5px;
+}
+.colorBox > div > div {
+    flex: 1;
+    cursor: pointer;
+}
+/* ======= 주소 입력 , 목적 ========= */
+
+.AddressPurpose {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    margin-top: 1px;
+}
+.address,
+.purpose {
+    flex: 1;
+    display: flex;
+}
+/* ================ */
+/* 인원수 , 예약 날짜 */
+/* ================ */
+.PeopleDate {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    margin-top: 1px;
+}
+.people {
+    flex: 0.7;
+    display: flex;
+}
+.people > div:nth-child(2) {
+    display: flex;
+    justify-content: left;
+}
+.people > div > input {
+    margin-left: 10px;
+    margin-right: 5px;
+    width: 50%;
+}
+
+.date {
+    flex: 1;
+    display: flex;
+}
+
+.date > div {
+    gap: 5px;
+}
+.date > div > input {
+    width: 40%;
+    font-size: 11px;
+    font-weight: 300;
+}
+
+/* ======= 강의실 선택 ===== */
+.ClassRoom {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 1px;
+}
+.ClassRoom > .titleBox {
+    width: 15%;
+    height: auto;
+    min-height: 30px;
+}
+.ClassRoom > .inputBox {
+    width: 85%;
+    height: auto;
+}
+.ClassRoom > div > div > div {
+    gap: 5px;
+    align-items: center;
+    margin-block: 5px;
+}
+
+.ClassRoom > div > div > select {
+    border: 1px solid rgb(191, 191, 191);
+    border-radius: 5px;
+}
+.ClassRoom > div > div > div > select:nth-child(2) {
+    width: 55px;
+}
+.ClassRoom > div > div > div > input {
+    border: 1px solid rgb(191, 191, 191);
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 300px;
+    width: 25%;
+}
+/* ===== 담당자 정보 ====== */
+.CustomerInfo {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+.CustomerInfo > div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.NameEmail {
+    width: 100%;
+    height: 30px;
+    display: flex;
+}
+.Phone {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    margin-top: 1px;
+}
+
+.name,
+.email,
+.phone1,
+.phone2 {
+    flex: 1;
+    display: flex;
+}
+/* ======= 예약 상태 ====== */
+.State {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    margin-top: 1px;
+}
+.State > .titleBox {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+    padding-right: 2px;
+}
+.State > .inputBox {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    padding-left: 10px;
+    border: 1px solid gray;
+    margin-left: -2px;
+}
+.State > .inputBox > select {
+    width: 20%;
+    height: 60%;
+    border: 1px solid rgb(191, 191, 191);
+}
+/* ================ */
+/* 예약 내용  */
+/* ================ */
+.Memo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 1px;
+}
+.Memo > .titleBox {
+    width: 15%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+}
+.Memo > .inputBox {
+    width: 85%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+}
+.Memo > .inputBox > textarea {
+    width: 95%;
+    margin-block: 10px;
+    border: 1px solid rgb(191, 191, 191);
+    min-height: 100px;
+}
+/* ================ */
+/* 숙소 */
+/* ================ */
+.Room {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.Room > .titleBox {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Room > .titleBox > span {
+    margin-left: 20px;
+}
+.Room > .titleBox > select {
+    margin-right: 20px;
+}
+
+.Room > .inputBox {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* ================ */
+/* 식수표 부분 */
+/* ================ */
+
+.Restaurant {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.Restaurant > .titleBox {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Restaurant > .titleBox > span {
+    font-size: 15px;
+}
+
+.Restaurant > .inputBox {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.RestaurantContiner {
+    width: 100%;
+    height: auto;
+    display: flex;
+    border: 1px solid gray;
+    align-items: center;
+}
+
+.RestaurantContiner > div {
+    width: 30%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+.RestaurantContiner > label {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.RestaurantContiner > input {
+    border: 1px solid rgb(191, 191, 191);
+    width: 40px;
+}
+
+.RestaurantContiner > span {
+    font-size: 12px;
+    margin-right: 30px;
+}

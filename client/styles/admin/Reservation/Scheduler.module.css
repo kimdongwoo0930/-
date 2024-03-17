@@ -1,0 +1,227 @@
+/* 글씨채  */
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ================= */
+
+.Main {
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* 처음에는 화면에 보이지 않도록 설정 */
+    transition: opacity 0.5s ease;
+}
+.Main.active {
+    opacity: 1; /* active 클래스가 추가되면 opacity 값이 1로 변화하여 화면에 나타남 */
+}
+
+.animate_left {
+    /* transform: rotate(45deg); /* 시계 방향 회전 */
+    transform: translateX(-2000px);
+}
+
+.animate_right {
+    transform: translateX(2000px);
+}
+
+.rotateRight {
+    -webkit-animation-name: spaceOutRight;
+    animation-name: spaceOutRight;
+    animation-duration: 0.5s;
+}
+@-webkit-keyframes spaceOutRight {
+    0% {
+        opacity: 1;
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+        -webkit-transform: scale(1) translate(0%, 0%);
+        transform: scale(1) translate(0%, 0%);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+        -webkit-transform: scale(0.2) translate(200%, 0%);
+        transform: scale(0.2) translate(200%, 0%);
+    }
+}
+@keyframes spaceOutRight {
+    0% {
+        opacity: 1;
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+        -webkit-transform: scale(1) translate(0%, 0%);
+        transform: scale(1) translate(0%, 0%);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+        -webkit-transform: scale(0.2) translate(200%, 0%);
+        transform: scale(0.2) translate(200%, 0%);
+    }
+}
+
+.rotateLeft {
+    -webkit-animation-name: spaceInLeft;
+    animation-name: spaceInLeft;
+    animation-duration: 0.5s;
+}
+@-webkit-keyframes spaceInLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+        -webkit-transform: scale(0.2) translate(-200%, 0%);
+        transform: scale(0.2) translate(-200%, 0%);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+        -webkit-transform: scale(1) translate(0%, 0%);
+        transform: scale(1) translate(0%, 0%);
+    }
+}
+@keyframes spaceInLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+        -webkit-transform: scale(0.2) translate(-200%, 0%);
+        transform: scale(0.2) translate(-200%, 0%);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+        -webkit-transform: scale(1) translate(0%, 0%);
+        transform: scale(1) translate(0%, 0%);
+    }
+}
+
+/* 연도와 달 변경 부분 */
+.Header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5%;
+    gap: 20px;
+    margin-top: 2rem;
+}
+.CurrentMonth {
+    width: auto;
+    height: auto;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: BMJUA;
+}
+.ChangeMonthBtn {
+    font-size: 30px;
+    cursor: pointer;
+}
+.ChangeMonthBtn:hover {
+    color: white;
+    width: auto;
+    height: auto;
+    background-color: black;
+    border-radius: 30px;
+}
+
+/* ============================== */
+/* 달력 부분 */
+/* ============================== */
+.TableContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 90%;
+    min-width: 800px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 900px;
+    margin-top: 3rem;
+}
+
+.Calendar {
+    border-collapse: collapse;
+    width: 95%;
+    border: 2px solid black;
+    height: 70%;
+    table-layout: fixed;
+    transition: transform 0.5s ease-in-out;
+}
+.Calendar thead {
+    border-bottom: 2px solid black;
+}
+
+.Day {
+    border: 1px solid gray;
+    background-color: rgb(213, 235, 243);
+    font-family: BMJUA;
+}
+
+.Week {
+    font-family: BMJUA;
+
+    font-weight: bold;
+    border: 1px solid gray;
+    background-color: rgb(213, 235, 243);
+}
+
+.Reservation {
+    color: white;
+    white-space: nowrap; /* 텍스트가 줄 바꿈되지 않도록 설정 */
+    overflow: hidden; /* 넘치는 텍스트를 숨기도록 설정 */
+    text-overflow: ellipsis; /* 텍스트가 넘치는 경우 생략 부호(...) 표시 */
+    text-align: center;
+    font-size: 0.8rem;
+    cursor: pointer;
+
+    font-family: BMJUA;
+}
+
+.Reservation:hover {
+    opacity: 0.7;
+}
+
+.blank {
+    border: 1px solid rgb(171, 225, 246);
+}
+
+.classroomName {
+    font-weight: bold;
+    background-color: rgb(179, 187, 192);
+    border-bottom: 1px solid;
+    text-align: center;
+    font-size: 0.9rem;
+
+    font-family: pretendard;
+}
+
+.classname {
+    border: 1px solid gray;
+    font-weight: bold;
+    font-size: 0.9rem;
+    font-family: BMJUA;
+}

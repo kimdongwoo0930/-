@@ -1,0 +1,201 @@
+.settingContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    height: 50px;
+
+    border-bottom: 2px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.header > h2 {
+    margin-left: 20px;
+}
+
+/* =============== */
+/* 애니메이션  */
+/* =============== */
+
+.PermissionSettingEnter {
+    -webkit-animation-name: slideRightReturn;
+    animation-name: slideRightReturn;
+    animation-duration: 0.5s;
+}
+@-webkit-keyframes slideRightReturn {
+    0% {
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+
+    100% {
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}
+@keyframes slideRightReturn {
+    0% {
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+
+    100% {
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}
+
+/* ================ */
+/* 메뉴  */
+/* ================ */
+.settingBody {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.settingContent {
+    width: 100%;
+    height: 100%;
+}
+
+.settingMenu {
+    width: 10rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-right: 2px solid black;
+    background-color: rgb(53, 27, 111);
+}
+.settingMenu > ul {
+    width: 90%;
+
+    text-align: center;
+
+    padding: 0;
+}
+
+.settingMenu > ul > li {
+    list-style-type: none;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(236, 0, 140);
+    color: white;
+    height: 3rem;
+    margin-block: 0.8rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    transition: background-color 0.5s;
+    border-radius: 5px;
+}
+
+.settingMenu > ul > li:hover {
+    background-color: #890554;
+
+    transition: background-color 0.5s;
+}
+
+/* ================ */
+.AccessPermission {
+    flex: 1;
+    display: flex;
+
+    border-bottom: 2px solid black;
+    flex-direction: column;
+}
+
+.TakePermission {
+    flex: 1;
+}
+
+.PermissionTitle {
+    font-size: 1.5rem;
+    width: 100%;
+    font-weight: bolder;
+    margin-inline: 1.5rem;
+    margin-top: 5px;
+}
+
+.PermissionContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PermissionList {
+    width: 90%;
+    height: 90%;
+    border: 2px solid black;
+
+    /* 그리드 */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 100px;
+}
+
+.PermissionItem {
+    display: flex;
+    border: 5px solid rgb(53, 27, 111);
+    margin: 10px;
+
+    align-items: center;
+}
+
+.PermissionName {
+    flex: 1;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PermissionState {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PermissionState > select {
+    width: 50%;
+    font-size: 1rem;
+    border: 2px solid rgb(236, 0, 140);
+    border-radius: 5px;
+}
+
+.PermissionRole {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PermissionRole > select {
+    width: 50%;
+    font-size: 1rem;
+    border: 2px solid rgb(236, 0, 140);
+    border-radius: 5px;
+}

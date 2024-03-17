@@ -1,0 +1,293 @@
+/* 글씨채  */
+
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* =========================== */
+.Home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: rgb(53, 27, 111);
+    overflow: hidden;
+}
+
+/* =========================== */
+.Grid_Container {
+    width: 100%;
+    display: grid;
+    background-color: white;
+    border-radius: 30px;
+
+    margin: 20px;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    grid-template-areas:
+        'weather weather weather'
+        'food    food    visitor   '
+        'food    food    visitor   ';
+}
+/* ============================= */
+/* 프로필 */
+/* ============================= */
+.ProfileContainer {
+    grid-area: profile;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 20px;
+    max-width: 300px;
+}
+.profilePhoto {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
+.profileName {
+    width: 100%;
+
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    border-top: 2px solid black;
+    font-family: BMJUA;
+}
+.profileRole {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+/* =============================== */
+/* 날씨 */
+/* =============================== */
+.WeatherContainer {
+    grid-area: weather;
+
+    border-radius: 30px;
+    margin: 10px;
+
+    background-color: #c2ddf9;
+    /* background-image: url('data:image/jpeg;base64,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');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+}
+.WeatherContainer > div:nth-child(1) {
+    display: flex;
+    height: 10%;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: 20px;
+    padding-top: 10px;
+    font-family: BMJUA;
+}
+.WeatherContainer > div:nth-child(2) {
+    display: flex;
+    height: 85%;
+}
+
+.Card:first-child {
+    flex: 1.5;
+}
+
+.Card {
+    position: relative;
+    flex: 1;
+    margin: 10px;
+    display: flex;
+
+    padding: 20px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 192, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);
+
+    /* transform: perspective(600px) rotateY(0deg) rotateX(0deg);*/
+
+    transition: transform 1s ease-in-out;
+}
+.Card:hover {
+    box-shadow: 0px 0px 20px 1px #ffbb763f;
+    transform: perspective(600px) rotateY(360deg) rotateX(0deg);
+    border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+.weatherCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.weatherDate {
+    font-family: BMJUA;
+
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+.weatherDate {
+}
+.weatherIcon > img {
+    transition: transform 0.5s ease-in-out;
+}
+
+.weatherIcon > img:hover {
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.3);
+    transform: rotateY(180deg);
+}
+
+.weatherTemp {
+    display: flex;
+
+    margin-bottom: 10px;
+    text-wrap: nowrap;
+}
+.weatherTempBox {
+    flex: 1;
+}
+.weatherTempBox > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.weatherTempBox > span {
+    font-weight: bolder;
+    font-size: 0.9rem;
+    font-family: BMJUA;
+}
+.weatherTempBox:first-child {
+    border-right: 1px solid gray;
+    padding-right: 10px;
+}
+.weatherTempBox:last-child {
+    border-left: 1px solid gray;
+    padding-left: 10px;
+}
+
+.weatherDescription {
+    text-align: center;
+    font-weight: bolder;
+    font-family: BMJUA;
+}
+
+/* ========================== */
+/* 조중식 */
+/* ========================== */
+
+.food {
+    grid-area: food;
+    border-radius: 30px;
+    background-color: #e7e7f3;
+
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    font-family: BMJUA;
+}
+.title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.foodContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+/* ============================== */
+/* 방문 업체  */
+/* ============================== */
+.visitor {
+    grid-area: visitor;
+
+    background-color: #e3d8c6;
+    border-radius: 30px;
+    margin: 10px;
+    padding: 20px;
+
+    font-family: BMJUA;
+    display: flex;
+    flex-direction: column;
+}
+.visitorTitle {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.visitorContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.classRoomContainer {
+    flex: 1;
+
+    border-radius: 20px;
+    background-color: rgba(255, 255, 192, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+}
+.RoomContainer {
+    flex: 1;
+    display: flex;
+    border-radius: 20px;
+
+    background-color: rgba(255, 255, 192, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);
+}
+.classRoomTile,
+.RoomTile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-right: 2px solid gray;
+}
+
+.classRoomContent {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+.RoomContent {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.2rem;
+}

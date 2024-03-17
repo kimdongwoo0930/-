@@ -1,11 +1,8 @@
-debug: false
+
 
 spring:
     profiles:
         include: DB
 
-    jpa:
-        hibernate:
-            ddl-auto: update
-        show-sql: true
 
+debug: false
